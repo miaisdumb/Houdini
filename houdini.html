@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylwsheet" type="text/css" href="houdini.css">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Houdini</title>
+
+</head>
+
+<body>
+    <header>
+       
+    </header>
+    <h1>Olá</h1>
+    <h2>Vamos jogar um jogo!</h2>
+    <h3>Pensa num número entre <span id="minNum"></span> e <span id="maxNum"></span></h3>
+    <h3>O número em que pensas te foi: <span id="numero"></span></h3>
+
+    <hr>
+
+    <h3>O número é:</h3>
+    <button onclick="maior()">É maior!</button>
+    <button onclick="menor()">É menor!</button>
+    <button onclick="acertou()">É esse!</button>
+
+    <hr>
+
+    <h3><span id="pim"></span></h3>
+
+    <script>
+
+        var minNum = 10;
+        var maxNum = 60;
+        var tentativa = Math.round ((minNum+maxNum)/2);
+
+
+        document.getElementById("minNum").innerHTML = minNum;
+        document.getElementById("maxNum").innerHTML = maxNum;
+        document.getElementById("numero").innerHTML = tentativa;
+
+
+        var maior = function()
+        {
+            minNum = tentativa;
+            tentativa = Math.round ((minNum+maxNum)/2);
+            document.getElementById("numero").innerHTML = tentativa;
+        }
+
+        var menor = function()
+        {
+            maxNum = tentativa;
+            tentativa = Math.round ((minNum+maxNum)/2);
+            document.getElementById("numero").innerHTML = tentativa;
+        }
+
+        var acertou = function()
+        {
+
+            document.getElementById("pim").innerHTML = "Yupi!";
+
+        }
+
+    </script>
+
+</body>
+</html>
